@@ -1,0 +1,71 @@
+/* Estilo principal del footer */
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: #fdecda; /* Color crema */
+  padding: 20px 10px;
+  color: #1d3557; /* Color del texto */
+  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap; /* Permite que se adapte en dispositivos pequeños */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Secciones del footer */
+.footer-section {
+  flex: 1;
+  margin: 10px;
+  min-width: 150px;
+}
+
+/* Título de cada sección */
+.footer-section h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #a8dadc; /* Color de los títulos */
+  margin-bottom: 10px;
+}
+
+/* Estilos para enlaces */
+.footer-section a {
+  display: block;
+  margin: 5px 0;
+  color: #1d3557; /* Color de los enlaces */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #e63946; /* Color de hover para enlaces */
+}
+
+/* Información de contacto */
+.contact-section p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+/* Redes sociales */
+.social-media a {
+  margin-right: 10px;
+  font-size: 0.9rem;
+  color: #1d3557;
+  text-decoration: none;
+}
+
+.social-media a:hover {
+  color: #e63946; /* Hover en redes sociales */
+}
+
+/* Estilo responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+}

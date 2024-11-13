@@ -1,0 +1,134 @@
+/* Contenedor principal que ocupa toda la pantalla */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #004e92, #ed213a); /* Fondo degradado */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Estilo de la tarjeta de login */
+.login-card {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+/* Ajuste para la mitad del formulario y mitad imágenes */
+.login-form {
+  flex: 1;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-images {
+  flex: 1;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Imágenes con bordes redondeados y ajuste de tamaño */
+.illustration {
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* Ajuste de altura para mostrar la imagen completa */
+  object-fit: contain; /* Asegura que la imagen se vea completa sin recorte */
+  border-radius: 12px; /* Bordes redondeados para cada imagen */
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Campos de entrada */
+.full-width {
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+mat-form-field .mat-icon {
+  color: #6c63ff;
+}
+
+/* Botón de inicio de sesión */
+button {
+  width: 100%;
+  text-transform: none;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  background-color: #6c63ff;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #5a54e0;
+}
+
+/* Opciones de sesión y olvido de contraseña */
+.session-options {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot-password {
+  color: #6c63ff;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Checkbox de mantener sesión */
+mat-checkbox {
+  color: #6c63ff;
+}
+
+/* Estilo para el enlace de registro */
+.register-link {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.register-link a {
+  color: #6c63ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}

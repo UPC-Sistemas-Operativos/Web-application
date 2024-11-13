@@ -1,0 +1,106 @@
+/* Contenedor principal */
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1e1e1e; /* Fondo oscuro */
+  font-family: 'Arial', sans-serif;
+  color: #f1faee;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Contenido en diseño horizontal sin card */
+.not-found-content {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* Imagen del error */
+.not-found-image {
+  width: 500px; /* Imagen más grande */
+  height: auto;
+  margin-right: 40px;
+  object-fit: contain;
+}
+
+/* Contenedor de texto */
+.text-content {
+  max-width: 700px;
+  text-align: center; /* Centra todo el texto dentro del contenedor */
+}
+
+.text-content h1 {
+  font-size: 7rem; /* Tamaño grande para destacar */
+  font-weight: 700;
+  color: #e63946; /* Rojo para el código 404 */
+  margin: 0;
+}
+
+.text-content h2 {
+  font-size: 3rem;
+  margin: 15px 0;
+  color: #f1faee;
+}
+
+.text-content p {
+  font-size: 1.6rem;
+  margin: 20px 0;
+  color: #a8dadc;
+  line-height: 1.6;
+}
+
+/* Botón de regreso centrado */
+.back-home-button {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: #38b000;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+  margin-top: 20px; /* Espacio superior para separar del texto */
+}
+
+.back-home-button:hover {
+  background-color: #2d7a00;
+  transform: scale(1.1); /* Efecto de escala */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .not-found-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .not-found-image {
+    width: 300px; /* Tamaño reducido en pantallas pequeñas */
+    margin: 0 0 20px 0;
+  }
+
+  .text-content h1 {
+    font-size: 5rem;
+  }
+
+  .text-content h2 {
+    font-size: 2rem;
+  }
+
+  .text-content p {
+    font-size: 1.2rem;
+  }
+
+  .back-home-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}

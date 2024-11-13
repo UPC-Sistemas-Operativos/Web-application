@@ -1,0 +1,77 @@
+/* Estilo principal del header */
+.header-toolbar {
+  display: flex;
+  align-items: center;
+  background-color: #fdecda; /* Color crema */
+  padding: 15px 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para darle profundidad */
+  color: #1d3557;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Contenedor del logo y nombre del sitio a la izquierda */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px; /* Tamaño del logo */
+  margin-right: 10px; /* Espacio entre el logo y el nombre */
+}
+
+.site-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #457b9d; /* Color pastel */
+}
+
+/* Contenedor de Navegación */
+.nav-container {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1; /* Permite que el contenedor de navegación ocupe el espacio necesario */
+}
+
+/* Estilos de los botones de navegación */
+.nav-container button {
+  color: #1d3557; /* Color del texto */
+  font-weight: 500;
+  margin: 0 15px; /* Espacio entre botones */
+  font-size: 1rem;
+  text-transform: uppercase; /* Texto en mayúsculas */
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.3s ease; /* Suave transición en el hover */
+}
+
+/* Efecto hover en los botones de navegación */
+.nav-container button:hover {
+  background-color: #f1faee; /* Fondo suave en hover */
+  border-radius: 5px; /* Bordes redondeados para el efecto hover */
+  color: #e63946; /* Color pastel para texto en hover */
+}
+
+/* Estilo responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .header-toolbar {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .logo-container {
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-container button {
+    margin: 5px 0;
+    width: 100%; /* Ocupa todo el ancho en dispositivos pequeños */
+    text-align: center;
+  }
+}

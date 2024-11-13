@@ -1,0 +1,16 @@
+<mat-toolbar color="primary" class="header-toolbar">
+  <!-- Logo y Nombre del Sitio a la Izquierda -->
+  <div class="logo-container" fxFlex="20" fxLayout="row" fxLayoutAlign="start center">
+    <img src="/logo.png" alt="Logo" class="logo" />
+    <span class="site-name">Aroma Propio</span>
+  </div>
+
+  <!-- Opciones de Navegación Centradas -->
+  <div fxFlex fxLayout="row" fxLayoutAlign="center center" class="nav-container">
+    <button mat-button routerLink="/home">Inicio</button> <!-- Cambiado a /home -->
+    <button mat-button routerLink="/perfume/catalog">Perfumes</button>
+    <button mat-button routerLink="/complaints">Libro de Reclamaciones</button>
+    <button mat-button routerLink="/auth/login">Iniciar Sesión</button>
+    <button mat-button routerLink="/auth/register">Registrarse</button>
+  </div>
+</mat-toolbar>
