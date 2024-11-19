@@ -146,6 +146,18 @@ body {
   transform: scale(1.2);
 }
 
+.favorite-button i {
+  font-size: 24px;
+}
+
+.favorite-button i.fa-heart-o {
+  color: grey;
+}
+
+.favorite-button i.fa-heart {
+  color: red;
+}
+
 .comments-section {
   background-color: var(--card-background);
   padding: 40px;
