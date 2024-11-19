@@ -1,24 +1,32 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+
+// Importación directa de los módulos y componentes necesarios
+import { AuthModule } from './modules/auth/auth.module';
+import { HomeModule } from './modules/home/home.module';
+import { PerfumeModule } from './modules/perfume/perfume.module';
+import { UserSettingsModule } from './modules/user-settings/user-settings.module';
+import { ComplaintsModule } from './modules/complaints/complaints.module';
+import { ContactModule } from './modules/contact/contact.module';
+import { CatalogComponent } from './modules/perfume/components/catalog/catalog.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'auth', loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule) },
-  { path: 'home', loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule) },
-  { path: 'perfume', loadChildren: () => import('./modules/perfume/perfume.module').then(m => m.PerfumeModule) },
-  { path: 'user-settings', loadChildren: () => import('./modules/user-settings/user-settings.module').then(m => m.UserSettingsModule) },
-  { path: 'complaints', loadChildren: () => import('./modules/complaints/complaints.module').then(m => m.ComplaintsModule) },
-  { path: 'contact', loadChildren: () => import('./modules/contact/contact.module').then(m => m.ContactModule) },
-  { path: '**', component: NotFoundComponent }
+  { path: 'auth', children: [{ path: '', loadChildren: () => AuthModule }] },
+  { path: 'home', children: [{ path: '', loadChildren: () => HomeModule }] },
+  { path: 'perfume', children: [{ path: '', loadChildren: () => PerfumeModule }] },
+  { path: 'perfume/catalog', component: CatalogComponent },
+  { path: 'user-settings', children: [{ path: '', loadChildren: () => UserSettingsModule }] },
+  { path: 'complaints', children: [{ path: '', loadChildren: () => ComplaintsModule }] },
+  { path: 'contact', children: [{ path: '', loadChildren: () => ContactModule }] },
+  { path: '**', component: NotFoundComponent } // Ruta para 404
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {
-      preloadingStrategy: PreloadAllModules, // Precarga todos los módulos
-    })
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

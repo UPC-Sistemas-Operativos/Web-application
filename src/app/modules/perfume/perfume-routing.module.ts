@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CatalogComponent } from './components/catalog/catalog.component';
-import { CustomizationComponent } from './components/customization/customization.component';
-import { ReviewsComponent } from './components/reviews/reviews.component';
+import { CatalogComponent } from './components/catalog/catalog.component'; // Ajusta el path si es necesario
 
 const routes: Routes = [
-  { path: 'catalog', component: CatalogComponent },
-  { path: 'customization', component: CustomizationComponent },
-  { path: 'reviews', component: ReviewsComponent },
+  { path: '', component: CatalogComponent }, // Ruta base para /perfume
+  { path: 'catalog', component: CatalogComponent } // Ruta para /perfume/catalog
 ];
 
 @NgModule({

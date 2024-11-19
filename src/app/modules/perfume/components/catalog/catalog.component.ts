@@ -1,10 +1,104 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+interface Perfume {
+  name: string;
+  description: string;
+  image: string;
+  family: string;
+  intensity: string;
+  duration: number;
+}
 
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
-  styleUrl: './catalog.component.css'
+  styleUrls: ['./catalog.component.css']
 })
-export class CatalogComponent {
+export class CatalogComponent implements OnInit {
+  olfactoryFamilies = ['Florales', 'Amaderadas', 'Cítricas', 'Orientales', 'Frutales'];
+  intensities = ['Baja', 'Media', 'Alta'];
+  durations = [4, 6, 8, 12];
 
+  selectedFamily: string = '';
+  selectedIntensity: string = '';
+  selectedDuration: number = 4;
+
+  perfumes: Perfume[] = [
+    { name: 'Perfume 1', description: 'Descripción de Perfume 1', image: 'url1', family: 'Florales', intensity: 'Alta', duration: 8 },
+    { name: 'Perfume 2', description: 'Descripción de Perfume 2', image: 'url2', family: 'Amaderadas', intensity: 'Media', duration: 6 },
+    { name: 'Perfume 3', description: 'Descripción de Perfume 3', image: 'url3', family: 'Cítricas', intensity: 'Baja', duration: 4 },
+    { name: 'Perfume 4', description: 'Descripción de Perfume 4', image: 'url4', family: 'Orientales', intensity: 'Alta', duration: 12 },
+    { name: 'Perfume 5', description: 'Descripción de Perfume 5', image: 'url5', family: 'Frutales', intensity: 'Media', duration: 8 },
+    { name: 'Perfume 6', description: 'Descripción de Perfume 6', image: 'url6', family: 'Florales', intensity: 'Alta', duration: 8 },
+    { name: 'Perfume 7', description: 'Descripción de Perfume 7', image: 'url7', family: 'Cítricas', intensity: 'Baja', duration: 6 },
+    { name: 'Perfume 8', description: 'Descripción de Perfume 8', image: 'url8', family: 'Amaderadas', intensity: 'Media', duration: 4 },
+    { name: 'Perfume 9', description: 'Descripción de Perfume 9', image: 'url9', family: 'Orientales', intensity: 'Alta', duration: 12 },
+    { name: 'Perfume 10', description: 'Descripción de Perfume 10', image: 'url10', family: 'Florales', intensity: 'Alta', duration: 6 },
+    { name: 'Perfume 11', description: 'Descripción de Perfume 11', image: 'url11', family: 'Amaderadas', intensity: 'Baja', duration: 4 },
+    { name: 'Perfume 12', description: 'Descripción de Perfume 12', image: 'url12', family: 'Cítricas', intensity: 'Alta', duration: 8 },
+    { name: 'Perfume 13', description: 'Descripción de Perfume 13', image: 'url13', family: 'Frutales', intensity: 'Media', duration: 6 },
+    { name: 'Perfume 14', description: 'Descripción de Perfume 14', image: 'url14', family: 'Orientales', intensity: 'Baja', duration: 12 },
+    { name: 'Perfume 15', description: 'Descripción de Perfume 15', image: 'url15', family: 'Florales', intensity: 'Alta', duration: 8 },
+    { name: 'Perfume 16', description: 'Descripción de Perfume 16', image: 'url16', family: 'Amaderadas', intensity: 'Media', duration: 6 },
+    { name: 'Perfume 17', description: 'Descripción de Perfume 17', image: 'url17', family: 'Cítricas', intensity: 'Baja', duration: 4 },
+    { name: 'Perfume 18', description: 'Descripción de Perfume 18', image: 'url18', family: 'Orientales', intensity: 'Alta', duration: 12 },
+    { name: 'Perfume 19', description: 'Descripción de Perfume 19', image: 'url19', family: 'Frutales', intensity: 'Media', duration: 8 },
+    { name: 'Perfume 20', description: 'Descripción de Perfume 20', image: 'url20', family: 'Florales', intensity: 'Baja', duration: 6 }
+  ];
+
+  filteredPerfumes: Perfume[] = [...this.perfumes];
+
+  comments = [
+    { user: 'Usuario 1', text: 'Me encanta este perfume, es perfecto para el día a día.', rating: 5 },
+    { user: 'Usuario 2', text: 'No me gustó mucho, el aroma es muy fuerte.', rating: 2 }
+  ];
+
+  internalComments = [
+    { user: 'Admin', text: 'Este perfume es un best-seller, se recomienda para el invierno.', rating: 5 }
+  ];
+
+  newComment = '';
+  newRating = 5;
+  newInternalComment = '';
+  newInternalRating = 5;
+
+  ngOnInit(): void {
+    this.applyFilters();
+  }
+
+  applyFilters() {
+    this.filteredPerfumes = this.perfumes.filter(perfume =>
+      (!this.selectedFamily || perfume.family === this.selectedFamily) &&
+      (!this.selectedIntensity || perfume.intensity === this.selectedIntensity) &&
+      (perfume.duration >= this.selectedDuration)
+    );
+  }
+
+  stars(rating: number) {
+    return new Array(rating).fill(0);
+  }
+
+  addToFavorites(perfume: Perfume) {
+    console.log(`${perfume.name} añadido a favoritos`);
+  }
+
+  submitComment() {
+    if (this.newComment) {
+      this.comments.push({ user: 'Usuario', text: this.newComment, rating: this.newRating });
+      this.newComment = '';
+      this.newRating = 5;
+    }
+  }
+
+  submitInternalComment() {
+    if (this.newInternalComment) {
+      this.internalComments.push({ user: 'Equipo', text: this.newInternalComment, rating: this.newInternalRating });
+      this.newInternalComment = '';
+      this.newInternalRating = 5;
+    }
+  }
+
+  viewDetails(perfume: Perfume) {
+    console.log('Ver detalles de', perfume);
+  }
 }

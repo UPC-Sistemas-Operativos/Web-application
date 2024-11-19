@@ -7,37 +7,39 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./complaints-form.component.css']
 })
 export class ComplaintsFormComponent implements OnInit {
-  complaintsForm!: FormGroup;
+  complaintsForm!: FormGroup; // Usamos '!' para indicar que será inicializada antes de su uso
+  formSubmitted = false;
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.complaintsForm = this.fb.group({
-      nombre: ['', [Validators.required, Validators.minLength(3)]],
+      nombre: ['', Validators.required],
       apellidoPaterno: ['', Validators.required],
       apellidoMaterno: ['', Validators.required],
       tipoDocumento: ['', Validators.required],
       numeroDocumento: ['', Validators.required],
-      direccion: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       celular: ['', Validators.required],
       menorEdad: [false],
       montoReclamado: ['', Validators.required],
       bienContratado: ['', Validators.required],
-      descripcionBien: ['', [Validators.required, Validators.minLength(10)]],
+      descripcionBien: ['', Validators.required],
       tipoProblema: ['', Validators.required],
       tipoReclamacion: ['', Validators.required],
-      detalleReclamo: ['', [Validators.required, Validators.minLength(10)]],
-      pedido: ['', [Validators.required, Validators.minLength(10)]],
+      detalleReclamo: ['', Validators.required],
+      pedido: ['', Validators.required]
     });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     if (this.complaintsForm.valid) {
-      console.log('Reclamo Enviado:', this.complaintsForm.value);
-      // Implementa la lógica de envío de datos, como llamar a una API
+      this.formSubmitted = true;
       this.complaintsForm.reset();
-      alert('Tu reclamo ha sido enviado con éxito.');
+
+      setTimeout(() => {
+        this.formSubmitted = false;
+      }, 5000); // Oculta el mensaje después de 5 segundos
     }
   }
 }

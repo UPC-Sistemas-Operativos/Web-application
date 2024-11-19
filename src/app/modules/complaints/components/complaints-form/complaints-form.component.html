@@ -3,6 +3,12 @@
     <mat-card-title class="complaints-title">Libro de Reclamaciones</mat-card-title>
     <mat-card-content>
       <form [formGroup]="complaintsForm" (ngSubmit)="onSubmit()">
+
+        <!-- Mensaje de éxito -->
+        <div *ngIf="formSubmitted" class="success-message">
+          Su reclamo ha sido enviado exitosamente.
+        </div>
+
         <!-- 1. Identificación del Consumidor Reclamante -->
         <h2>1. Identificación del consumidor reclamante</h2>
         <div class="form-group">
@@ -101,8 +107,8 @@
           Los datos personales proporcionados serán utilizados para la gestión de su reclamo, conforme a las normas de privacidad vigentes.
         </div>
         <div class="actions">
-          <button mat-raised-button color="primary" type="submit" [disabled]="complaintsForm.invalid">
-            Enviar
+          <button mat-raised-button color="accent" type="submit" [disabled]="complaintsForm.invalid">
+            Enviar Reclamo
           </button>
         </div>
       </form>

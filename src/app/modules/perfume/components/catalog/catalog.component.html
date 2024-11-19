@@ -1,1 +1,99 @@
-<p>catalog works!</p>
+<div class="catalog-container">
+  <!-- Filtros -->
+  <div class="filters">
+    <h3>Filtros</h3>
+    <div class="filter-options">
+      <div class="filter-item">
+        <label for="olfactoryFamily">Familia Olfativa</label>
+        <select id="olfactoryFamily" [(ngModel)]="selectedFamily" (change)="applyFilters()">
+          <option value="">Seleccionar Familia</option>
+          <option *ngFor="let family of olfactoryFamilies" [value]="family">{{ family }}</option>
+        </select>
+      </div>
+
+      <div class="filter-item">
+        <label for="intensity">Intensidad</label>
+        <select id="intensity" [(ngModel)]="selectedIntensity" (change)="applyFilters()">
+          <option value="">Seleccionar Intensidad</option>
+          <option *ngFor="let intensity of intensities" [value]="intensity">{{ intensity }}</option>
+        </select>
+      </div>
+
+      <div class="filter-item">
+        <label for="duration">Duración</label>
+        <select id="duration" [(ngModel)]="selectedDuration" (change)="applyFilters()">
+          <option value="">Seleccionar Duración</option>
+          <option *ngFor="let duration of durations" [value]="duration">{{ duration }} horas</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Catálogo de Perfumes -->
+  <div class="perfume-cards">
+    <div class="card" *ngFor="let perfume of filteredPerfumes">
+      <img [src]="perfume.image" alt="{{ perfume.name }}">
+      <div class="card-info">
+        <h4>{{ perfume.name }}</h4>
+        <p class="family">Familia: {{ perfume.family }}</p>
+        <p class="intensity">Intensidad: {{ perfume.intensity }}</p>
+        <p class="duration">Duración: {{ perfume.duration }} horas</p>
+        <p class="description">{{ perfume.description }}</p>
+        <button class="favorite-button" (click)="addToFavorites(perfume)">
+          <i class="fas fa-heart"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección de Comentarios -->
+  <div class="comments-section">
+    <h3>Comentarios Recientes</h3>
+    <div *ngFor="let comment of comments" class="comment">
+      <div class="rating">
+        <ng-container *ngFor="let star of stars(comment.rating)">
+          <i class="fas fa-star"></i>
+        </ng-container>
+      </div>
+      <p><strong>{{ comment.user }}:</strong> {{ comment.text }}</p>
+    </div>
+
+    <!-- Sección para dejar un comentario -->
+    <div class="leave-comment">
+      <textarea [(ngModel)]="newComment" placeholder="Escribe tu comentario..." rows="4"></textarea>
+      <select [(ngModel)]="newRating">
+        <option value="1">1 Estrella</option>
+        <option value="2">2 Estrellas</option>
+        <option value="3">3 Estrellas</option>
+        <option value="4">4 Estrellas</option>
+        <option value="5">5 Estrellas</option>
+      </select>
+      <button (click)="submitComment()">Enviar Comentario</button>
+    </div>
+  </div>
+
+  <!-- Sección para comentarios internos del equipo -->
+  <div class="internal-comments">
+    <h3>Comentarios del Equipo</h3>
+    <div *ngFor="let comment of internalComments" class="internal-comment">
+      <div class="rating">
+        <ng-container *ngFor="let star of stars(comment.rating)">
+          <i class="fas fa-star"></i>
+        </ng-container>
+      </div>
+      <p><strong>{{ comment.user }}:</strong> {{ comment.text }}</p>
+    </div>
+
+    <div class="leave-internal-comment">
+      <textarea [(ngModel)]="newInternalComment" placeholder="Deja tu comentario interno..." rows="4"></textarea>
+      <select [(ngModel)]="newInternalRating">
+        <option value="1">1 Estrella</option>
+        <option value="2">2 Estrellas</option>
+        <option value="3">3 Estrellas</option>
+        <option value="4">4 Estrellas</option>
+        <option value="5">5 Estrellas</option>
+      </select>
+      <button (click)="submitInternalComment()">Enviar Comentario Interno</button>
+    </div>
+  </div>
+</div>
