@@ -1,21 +1,21 @@
 /* Estilo principal del footer */
 .footer-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between; /* Distribución izquierda, centro y derecha */
   align-items: flex-start;
-  background-color: #fdecda; /* Color crema */
+  background-color: #26262F; /* Color oscuro */
   padding: 20px 10px;
   color: #1d3557; /* Color del texto */
   box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap; /* Permite que se adapte en dispositivos pequeños */
   font-family: 'Arial', sans-serif;
+  flex-wrap: wrap; /* Permite ajuste en dispositivos pequeños */
 }
 
 /* Secciones del footer */
 .footer-section {
   flex: 1;
-  margin: 10px;
-  min-width: 150px;
+  text-align: center; /* Centra el contenido dentro de cada sección */
+  min-width: 200px; /* Evita que las secciones sean demasiado pequeñas */
 }
 
 /* Título de cada sección */
@@ -60,12 +60,11 @@
 /* Estilo responsive para pantallas pequeñas */
 @media (max-width: 768px) {
   .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: column; /* Apila las secciones en dispositivos pequeños */
+    align-items: center; /* Centra todo horizontalmente */
   }
 
   .footer-section {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Espaciado entre secciones */
   }
 }

@@ -24,26 +24,26 @@ export class CatalogComponent implements OnInit {
   selectedDuration: number = 4;
 
   perfumes: Perfume[] = [
-    { name: 'Perfume 1', description: 'Descripción de Perfume 1', image: 'url1', family: 'Florales', intensity: 'Alta', duration: 8 },
-    { name: 'Perfume 2', description: 'Descripción de Perfume 2', image: 'url2', family: 'Amaderadas', intensity: 'Media', duration: 6 },
-    { name: 'Perfume 3', description: 'Descripción de Perfume 3', image: 'url3', family: 'Cítricas', intensity: 'Baja', duration: 4 },
-    { name: 'Perfume 4', description: 'Descripción de Perfume 4', image: 'url4', family: 'Orientales', intensity: 'Alta', duration: 12 },
-    { name: 'Perfume 5', description: 'Descripción de Perfume 5', image: 'url5', family: 'Frutales', intensity: 'Media', duration: 8 },
-    { name: 'Perfume 6', description: 'Descripción de Perfume 6', image: 'url6', family: 'Florales', intensity: 'Alta', duration: 8 },
-    { name: 'Perfume 7', description: 'Descripción de Perfume 7', image: 'url7', family: 'Cítricas', intensity: 'Baja', duration: 6 },
-    { name: 'Perfume 8', description: 'Descripción de Perfume 8', image: 'url8', family: 'Amaderadas', intensity: 'Media', duration: 4 },
-    { name: 'Perfume 9', description: 'Descripción de Perfume 9', image: 'url9', family: 'Orientales', intensity: 'Alta', duration: 12 },
-    { name: 'Perfume 10', description: 'Descripción de Perfume 10', image: 'url10', family: 'Florales', intensity: 'Alta', duration: 6 },
-    { name: 'Perfume 11', description: 'Descripción de Perfume 11', image: 'url11', family: 'Amaderadas', intensity: 'Baja', duration: 4 },
-    { name: 'Perfume 12', description: 'Descripción de Perfume 12', image: 'url12', family: 'Cítricas', intensity: 'Alta', duration: 8 },
-    { name: 'Perfume 13', description: 'Descripción de Perfume 13', image: 'url13', family: 'Frutales', intensity: 'Media', duration: 6 },
-    { name: 'Perfume 14', description: 'Descripción de Perfume 14', image: 'url14', family: 'Orientales', intensity: 'Baja', duration: 12 },
-    { name: 'Perfume 15', description: 'Descripción de Perfume 15', image: 'url15', family: 'Florales', intensity: 'Alta', duration: 8 },
-    { name: 'Perfume 16', description: 'Descripción de Perfume 16', image: 'url16', family: 'Amaderadas', intensity: 'Media', duration: 6 },
-    { name: 'Perfume 17', description: 'Descripción de Perfume 17', image: 'url17', family: 'Cítricas', intensity: 'Baja', duration: 4 },
-    { name: 'Perfume 18', description: 'Descripción de Perfume 18', image: 'url18', family: 'Orientales', intensity: 'Alta', duration: 12 },
-    { name: 'Perfume 19', description: 'Descripción de Perfume 19', image: 'url19', family: 'Frutales', intensity: 'Media', duration: 8 },
-    { name: 'Perfume 20', description: 'Descripción de Perfume 20', image: 'url20', family: 'Florales', intensity: 'Baja', duration: 6 }
+    { name: 'Perfume 1', description: 'Descripción de Perfume 1', image: '/floral 1.png', family: 'Florales', intensity: 'Alta', duration: 8 },
+    { name: 'Perfume 2', description: 'Descripción de Perfume 2', image: '/amederado 1.png', family: 'Amaderadas', intensity: 'Media', duration: 6 },
+    { name: 'Perfume 3', description: 'Descripción de Perfume 3', image: '/citrica 1.png', family: 'Cítricas', intensity: 'Baja', duration: 4 },
+    { name: 'Perfume 4', description: 'Descripción de Perfume 4', image: '/oriental.png', family: 'Orientales', intensity: 'Alta', duration: 12 },
+    { name: 'Perfume 5', description: 'Descripción de Perfume 5', image: '/frutal 1.png', family: 'Frutales', intensity: 'Media', duration: 8 },
+    { name: 'Perfume 6', description: 'Descripción de Perfume 6', image: '/floral 2.png', family: 'Florales', intensity: 'Alta', duration: 8 },
+    { name: 'Perfume 7', description: 'Descripción de Perfume 7', image: '/citrica 2.png', family: 'Cítricas', intensity: 'Baja', duration: 6 },
+    { name: 'Perfume 8', description: 'Descripción de Perfume 8', image: 'amaderado 2 .png', family: 'Amaderadas', intensity: 'Media', duration: 4 },
+    { name: 'Perfume 9', description: 'Descripción de Perfume 9', image: '/oriental 2.png', family: 'Orientales', intensity: 'Alta', duration: 12 },
+    { name: 'Perfume 10', description: 'Descripción de Perfume 10', image: '/floral 3.png', family: 'Florales', intensity: 'Alta', duration: 6 },
+    { name: 'Perfume 11', description: 'Descripción de Perfume 11', image: '/amaderado 3.png', family: 'Amaderadas', intensity: 'Baja', duration: 4 },
+    { name: 'Perfume 12', description: 'Descripción de Perfume 12', image: '/citrica 3.png', family: 'Cítricas', intensity: 'Alta', duration: 8 },
+    { name: 'Perfume 13', description: 'Descripción de Perfume 13', image: '/frutal 2.png', family: 'Frutales', intensity: 'Media', duration: 6 },
+    { name: 'Perfume 14', description: 'Descripción de Perfume 14', image: 'oriental 3 .png', family: 'Orientales', intensity: 'Baja', duration: 12 },
+    { name: 'Perfume 15', description: 'Descripción de Perfume 15', image: 'floral 4 .png', family: 'Florales', intensity: 'Alta', duration: 8 },
+    { name: 'Perfume 16', description: 'Descripción de Perfume 16', image: 'amaderado 4 .png', family: 'Amaderadas', intensity: 'Media', duration: 6 },
+    { name: 'Perfume 17', description: 'Descripción de Perfume 17', image: '/citrica 4.png', family: 'Cítricas', intensity: 'Baja', duration: 4 },
+    { name: 'Perfume 18', description: 'Descripción de Perfume 18', image: '/oriental 4.png', family: 'Orientales', intensity: 'Alta', duration: 12 },
+    { name: 'Perfume 19', description: 'Descripción de Perfume 19', image: '/frutal 3.png', family: 'Frutales', intensity: 'Media', duration: 8 },
+    { name: 'Perfume 20', description: 'Descripción de Perfume 20', image: '/floral 5.jpg', family: 'Florales', intensity: 'Baja', duration: 6 }
   ];
 
   filteredPerfumes: Perfume[] = [...this.perfumes];
