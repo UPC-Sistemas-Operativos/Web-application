@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,22 +8,38 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm!: FormGroup;  // Usamos el operador `!`
+  loginForm!: FormGroup; // Formulario reactivo
+  errorMessage: string = ''; // Mensaje de error
 
-  constructor(private fb: FormBuilder) { }
+  // Credenciales válidas
+  private readonly validUsername: string = 'Prueba123@example.com';
+  private readonly validPassword: string = 'password123';
+
+  constructor(
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      username: ['', [Validators.required]],
-      password: ['', [Validators.required]],
-      stayConnected: [false]
+      username: ['', [Validators.required, Validators.email]], // Validar email
+      password: ['', [Validators.required]], // Validar que no esté vacío
     });
   }
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-      console.log("Formulario enviado:", this.loginForm.value);
-      // Lógica de autenticación
+      const { username, password } = this.loginForm.value;
+
+      // Validar credenciales específicas
+      if (username === this.validUsername && password === this.validPassword) {
+        this.errorMessage = ''; // Limpiar mensaje de error
+        this.router.navigate(['/home']); // Redirigir al home
+      } else {
+        this.errorMessage = 'Error: Usuario o contraseña incorrectos.';
+      }
+    } else {
+      this.errorMessage = 'Error: Completa todos los campos correctamente.';
     }
   }
 }

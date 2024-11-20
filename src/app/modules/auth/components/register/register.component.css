@@ -147,6 +147,21 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
+/* Mensajes de éxito y error */
+.success-message {
+  color: green;
+  font-weight: bold;
+  grid-column: span 2;
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  grid-column: span 2;
+  text-align: center;
+}
+
 /* Responsividad para pantallas pequeñas */
 @media (max-width: 768px) {
   .register-card {
