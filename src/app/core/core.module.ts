@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LibroDeReclamacionesComponent } from './pages/libro-de-reclamaciones/libro-de-reclamaciones/libro-de-reclamaciones.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    LibroDeReclamacionesComponent
+  ],
   imports: [
     CommonModule
   ]
